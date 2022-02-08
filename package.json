@@ -2,11 +2,16 @@
   "name": "ms-authentication",
   "version": "1.0.0",
   "description": "Microservices criado durante o bootcamp banco-inter-developer",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js"
+    "start": "node ./",
+    "build": "tsc -p ."
   },
   "author": "Pedro Henrique",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.16",
+    "typescript": "^4.5.5"
+  }
 }
