@@ -35,6 +35,24 @@ class userRepository {
         }                 
     }
 
+    async findByUserNameAndPassword(username: string, password: string) : Promise<User | null> {
+        try {
+            const query = `
+            SELECT uuid, username
+            FROM application_user
+            WHERE username = $1
+            AND password = crypt($2, 'my_salt')
+        `;
+
+        const values = [username, password];
+        const { rows }= await db.query<User>(query, values)
+        const [ user ] = rows;
+        return user || null;
+        } catch (error) {
+            throw new DataBaseError('Erro na consulta por username e password', error);
+        }
+    }
+
     async createNewUser(user: User) : Promise<string> {
         const query = `
             INSERT INTO application_user (
@@ -75,6 +93,7 @@ class userRepository {
         const value = [uuid];
         await db.query(query, value);
     }
+
 
 }
 
