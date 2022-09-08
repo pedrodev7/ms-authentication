@@ -1,6 +1,6 @@
 # Microserviço de autenticação com NodeJS
 
-Projeto desenvolvido durante a trilha do bootcamp **Inter Frontend Developer** na Digital Innovation One (DIO). 
+Projeto desenvolvido durante uma aula na **Rocketseat**.
 <br>
 <br>
 ## Módulo 1 - Explorando o Estilo Arquitetural REST com Node.js
